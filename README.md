@@ -51,9 +51,12 @@ npm run build
 
 ### Thanks
 
-Thanks @moarwick for creating the starter project this is built from
+I want to thank the people who that made this [great starter project](https://github.com/moarwick/elm-webpack-starter) and various bloggers from around the web.
 
 ### Changelog
+
+**Ver 0.1.1** 
+Added demo
 
 **Ver 0.1.0** 
 * Added calculator functions - Add, Minus, Devide, Mutiple, Equals, Decimal, Numeric Input, Display
