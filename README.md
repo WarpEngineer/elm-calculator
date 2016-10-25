@@ -1,3 +1,4 @@
+<img src="/docs/screenshot.png" align="right" width="200px">
 # elm-calculator
 A calculator written in elm. Feel free to use this as a jumping off point for your own experiments.
 
