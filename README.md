@@ -51,7 +51,7 @@ npm run build
 
 ### Thanks
 
-I want to thank the people who that made this [great starter project](https://github.com/moarwick/elm-webpack-starter) and various bloggers from around the web.
+I want to thank the people who made this [great starter project](https://github.com/moarwick/elm-webpack-starter) and various bloggers from around the web.
 
 ### Changelog
 
