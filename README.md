@@ -1,4 +1,4 @@
-[<img src="/docs/screenshot.png" align="right" width="200px">](https://pheintzelman.github.io/elm-calculator/)
+[<img src="/docs/screenshot.png" align="right" title="Elm Calculator" alt="Elm Calculator Demo" width="200px">](https://pheintzelman.github.io/elm-calculator/)
 # elm-calculator
 A calculator written in elm. Feel free to use this as a jumping off point for your own elm experiments.
 
