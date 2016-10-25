@@ -1,6 +1,6 @@
-<img src="/docs/screenshot.png" align="right" width="200px">
+[<img src="/docs/screenshot.png" align="right" width="200px">](https://pheintzelman.github.io/elm-calculator/)
 # elm-calculator
-A calculator written in elm. Feel free to use this as a jumping off point for your own experiments.
+A calculator written in elm. Feel free to use this as a jumping off point for your own elm experiments.
 
 I created this project to give elm a try. I am currently working on a blog post of the experience. Will add link soon.
 
