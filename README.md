@@ -2,6 +2,7 @@
 A calculator written in elm. Feel free to use this as a jumping off point for your own experiments.
 
 I created this project to give elm a try. I am currently working on a blog post of the experience. Will add link soon.
+
 [See demo here](https://pheintzelman.github.io/elm-calculator/) 
 
 ### Install:
