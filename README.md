@@ -1,14 +1,14 @@
-# ElmCalculator
+# elm-calculator
 A calculator written in elm. Feel free to use this as a jumping off point for your own experiments.
 
 I created this project to give elm a try. I am currently working on a blog post of the experience. Will add link soon.
 Also demo link will be added shortly
 
 ### Install:
-Clone this repo into a new project folder, e.g. `my-elm-project`, and install its dependencies:
+Clone this repo into a new project folder, e.g. `elm-calculator`, and install its dependencies:
 ```
-git clone https://github.com/pheintzelman/ElmCalculator.git ElmCalculator
-cd ElmCalculator
+git clone https://github.com/pheintzelman/elm-calculator.git elm-calculator
+cd elm-calculator
 npm install
 ```
 
@@ -47,6 +47,9 @@ npm run build
 * Files are saved into the `/dist` folder
 * To view it, open `dist/index.html`
 
+### Thanks
+
+Thanks @moarwick for creating the starter project this is built from
 
 ### Changelog
 
