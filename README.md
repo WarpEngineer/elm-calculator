@@ -55,6 +55,12 @@ I want to thank the people who made this [great starter project](https://github.
 
 ### Changelog
 
+**Ver 0.2.1** 
+Added operation chaining
+Fixed bug with pressing operation at start
+Fixed bug with pressing equal at start
+Add V1 underdocs which excludes these fixes
+
 **Ver 0.1.1** 
 Added demo
 
