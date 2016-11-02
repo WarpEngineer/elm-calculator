@@ -15,10 +15,18 @@ main =
 
 
 -- MODEL
-type alias Model = {display : String, function : Float->Float->Float, lastValue : Float, append : Bool }
+type alias Model = {display : String, 
+                    function : Float->Float->Float, 
+                    lastValue : Float, 
+                    append : Bool, 
+                    chainOperation : Bool}
 
 defaultModel : Model
-defaultModel = {display = "", function = (\x y -> y), lastValue = 0, append = True}
+defaultModel = {display = "", 
+                function = (\x y -> y), 
+                lastValue = 0, 
+                append = True, 
+                chainOperation = False}
 
 update : Event -> Model -> Model
 update event model =
@@ -28,7 +36,7 @@ update event model =
     Number number -> updateDisplay model number
     Dot -> dot model
     Zero -> zero model
-    Devide -> operation model calculator.devide
+    Divide -> operation model calculator.divide
     Times -> operation model calculator.times
     Minus -> operation model calculator.minus
     Add -> operation model calculator.add
@@ -38,9 +46,24 @@ parseFloat: String -> Float
 parseFloat input = Result.withDefault 0 (String.toFloat input)
 
 operation : Model -> (Float->Float->Float) -> Model
-operation model function =  {model | function = function,
-                                     lastValue = (parseFloat model.display),
-                                     append = False}
+operation model function =  let
+                                newDisplay = calculate model
+                            in
+                            if String.isEmpty model.display 
+                            then
+                                model
+                            else
+                            if model.chainOperation
+                            then
+                              {model | function = function,
+                                       display = newDisplay,
+                                       lastValue = (parseFloat newDisplay),
+                                       append = False}
+                             else 
+                              {model | function = function,
+                                       lastValue = (parseFloat model.display),
+                                       append = False,
+                                       chainOperation = True}
 
 updateDisplay : Model -> Int -> Model
 updateDisplay model number = if model.append 
@@ -48,12 +71,18 @@ updateDisplay model number = if model.append
                              else {model | display = toString(number), append = True}
                         
 equal : Model -> Model
-equal model = if model.append 
-                  then {model | display = calculate model, 
+equal model =  if String.isEmpty model.display 
+               then
+                  model
+               else
+               if model.append 
+               then {model | display = calculate model, 
                                 lastValue = (parseFloat model.display),
-                                append = False}
-                  else {model | display = calculate model, 
-                                append = False}
+                                append = False,
+                                chainOperation = False}
+               else {model | display = model.function (parseFloat model.display) model.lastValue |> toString,
+                                append = False,
+                                chainOperation = False}
 
 calculate : Model -> String
 calculate model = model.function model.lastValue (parseFloat model.display) |> toString 
@@ -90,7 +119,7 @@ view model =
                                 calculatorButton (Number 7) "7", 
                                 calculatorButton (Number 8) "8",
                                 calculatorButton (Number 9) "9",
-                                calculatorButton Devide "÷",
+                                calculatorButton Divide "÷",
                                 calculatorButton (Number 4) "4", 
                                 calculatorButton (Number 5) "5",
                                 calculatorButton (Number 6) "6",
